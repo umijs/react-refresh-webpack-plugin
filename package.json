@@ -146,5 +146,9 @@
   },
   "engines": {
     "node": ">= 10.13"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }
