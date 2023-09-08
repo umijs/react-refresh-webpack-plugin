@@ -1,5 +1,5 @@
 {
-  "name": "@pmmmwh/react-refresh-webpack-plugin",
+  "name": "@umijs/react-refresh-webpack-plugin",
   "version": "0.5.11",
   "description": "An **EXPERIMENTAL** Webpack plugin to enable \"Fast Refresh\" (also previously known as _Hot Reloading_) for React components.",
   "keywords": [
@@ -146,5 +146,9 @@
   },
   "engines": {
     "node": ">= 10.13"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }
