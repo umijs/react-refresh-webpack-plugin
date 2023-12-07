@@ -45,9 +45,13 @@ function ReactRefreshLoader(source, inputSourceMap, meta) {
   const { ModuleFilenameHelpers, Template } = this._compiler.webpack || require('webpack');
 
   const RefreshSetupRuntimes = {
-    cjs: Template.asString(
-      `__webpack_require__.$Refresh$.runtime = require('${RefreshRuntimePath}');`
-    ),
+    cjs: Template.asString([
+      `if (__webpack_require__.$Refresh$) { `,
+      Template.indent([
+        `__webpack_require__.$Refresh$.runtime = require('${RefreshRuntimePath}');`,
+      ]),
+      `}`
+    ]),
     esm: Template.asString([
       `import * as __react_refresh_runtime__ from '${RefreshRuntimePath}';`,
       `__webpack_require__.$Refresh$.runtime = __react_refresh_runtime__;`,
